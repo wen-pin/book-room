@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/SingleRoom',
-    name: '單人床',
+    name: '單人床啊ㄖㄚ安安安安安安 ',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
