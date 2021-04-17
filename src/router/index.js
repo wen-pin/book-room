@@ -7,7 +7,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    edjwodj: fetchAsyncQuestionPropertyQuestionProperty,
+    edjwodj: fetchAsyncQuestionPropertyQuestiooperty,
   },
   {
     path: '/SingleRoom',
