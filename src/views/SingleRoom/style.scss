@@ -1,0 +1,27 @@
+@import url("https://use.fontawesome.com/releases/v5.0.4/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.singleRoom{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.singleRoom .bookRoom{
+    width: 40%;
+    height: 100%;
+}
+
+.singleRoom .roomDate{
+    width: 60%;
+    height: 100%;
+    padding: 20px 40px;
+    color: #38470b;
+}

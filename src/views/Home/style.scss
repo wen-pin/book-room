@@ -1,0 +1,194 @@
+@import url("https://use.fontawesome.com/releases/v5.0.4/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.fullScreen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.fade-out_in{
+    animation: outIn 1s;
+}
+
+.fade-leave_to{
+    animation: inOut 1s;
+}
+
+@keyframes outIn {
+    0% {
+        filter: contrast(3);
+    }
+    100% {
+        filter: contrast(1);
+    }
+}
+
+@keyframes inOut {
+    0% {
+        filter: contrast(3);
+    }
+    100% {
+        filter: contrast(1);
+    }
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepageConfiguration_main_head {
+    width: 10%;
+    height: 50%;
+    margin-right: 10%;
+    z-index:1;
+}
+
+.homepageConfiguration_main_head_logo {
+    height: 30%;
+    margin-bottom: 50%;
+}
+
+.homepageConfiguration_main_head_logo img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.homepageConfiguration_main_head_title {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: #fff;
+}
+
+span:first-child {
+    line-height: 3rem;
+    opacity: 1;
+    font-weight: 700;
+}
+
+span:first-child~span {
+    line-height: 2rem;
+    opacity: .8;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.homepageConfiguration_main_context {
+    width: 50%;
+    height: 60%;
+}
+
+.homepageConfiguration_main_context_thumbnail {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.homepageConfiguration_main_context_thumbnail .thumbnail {
+    width: 33%;
+    height: 100%;
+    position: relative;
+}
+
+.homepageConfiguration_main_context_thumbnail img {
+    width: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.homepageConfiguration_main_context_thumbnail .txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #38470b;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.homepageConfiguration_main_context_thumbnail .thumbnail:hover .txt {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.homepageConfiguration_main_context_thumbnail .txt h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.homepageConfiguration_other {
+    display: flex;
+    bottom: 5%;
+    left: 10%;
+    position: absolute;
+}
+
+.homepageConfiguration_other_button {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 7px;
+}
+
+.homepageConfiguration_other_button{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.homepageConfiguration_other_button {
+    &.active {
+        background-color: #fff;
+    }
+}
