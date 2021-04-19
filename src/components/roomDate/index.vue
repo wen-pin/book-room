@@ -93,6 +93,13 @@
             <div class="roomData_monthly">
                 <p class="roomData_monthly_title">空房狀態查詢</p>
                 <div class="roomData_monthly_date">
+                    <v-date-picker 
+                        :value="null"
+                        color="green"
+                        is-range v-model="date"
+                        :columns="$screens({ default: 1, lg: 2 })"
+                        is-expanded
+                    />
                 </div>
             </div>
         </div>
