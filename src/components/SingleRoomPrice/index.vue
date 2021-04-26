@@ -17,11 +17,18 @@ export default {
         return {
             totalDays: {
                 days: 1,
-                normalDays: 1,
+                normalDays: 0,
                 holidays: 0,
             },
-            today: new Date,
+            today: new Date(),
         }
+    },
+    created() {
+            if(this.today.getDay() === (1 || 2 || 3 || 4)){
+                this.totalDays.normalDays = 1
+            }else if(this.today.getDay() === (0 || 5 || 6)){
+                this.totalDays.holidays = 1
+            }
     },
     computed: {
         totalDay (){

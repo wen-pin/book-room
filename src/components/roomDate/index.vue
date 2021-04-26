@@ -113,8 +113,6 @@ export default {
     data() {
         return {
             range: new Date(),
-            // normalDay = [],
-            // holiDay = [],
         }
     },
     computed: {
