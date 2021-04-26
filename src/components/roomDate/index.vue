@@ -93,12 +93,13 @@
             <div class="roomData_monthly">
                 <p class="roomData_monthly_title">空房狀態查詢</p>
                 <div class="roomData_monthly_date">
-                    <v-date-picker 
-                        :value="null"
+                    <v-date-picker
                         color="green"
-                        is-range v-model="date"
+                        v-model="range"
+                        is-range
                         :columns="$screens({ default: 1, lg: 2 })"
                         is-expanded
+                        :min-date='new Date()'
                     />
                 </div>
             </div>
@@ -109,6 +110,108 @@
 <script>
 
 export default {
+    data() {
+        return {
+            range: new Date(),
+            // normalDay = [],
+            // holiDay = [],
+        }
+    },
+    computed: {
+        chooseDaytotal: function (){
+            if(!this.range.end || !this.range.start){
+                return 0
+            }else{
+                let i = 0
+                let totalDay = []
+                let endTime = this.range.end.getTime()
+                let startTime = this.range.start.getTime()
+                while((endTime-startTime) >= 0){
+                    totalDay[i] = startTime
+                    startTime += 86400000
+                    i +=1
+                }return totalDay.length
+            }
+        },
+        distinguishNormalDay: function (){
+            if(!this.range.end || !this.range.start){
+                return 0
+            }else{
+                let i = 0
+                let date = ''
+                let week = ''
+                let normalDay = []
+                let allWeek = []
+                let endTime = this.range.end.getTime()
+                let startTime = this.range.start.getTime()
+                while((endTime-startTime) >= 0){
+                    date = new Date(startTime)
+                    week = date.getDay().toString()
+                    allWeek[i] = week
+                    startTime += 86400000
+                    i +=1
+                }
+                normalDay = allWeek.filter(function(week){
+                    return week.match(/[1-4]/)
+                })
+                return normalDay.length
+            }
+        },
+        distinguishholiday: function (){
+            if(!this.range.end || !this.range.start){
+                return 0
+            }else{
+                let i = 0
+                let date = ''
+                let week = ''
+                let holiday = []
+                let allWeek = []
+                let endTime = this.range.end.getTime()
+                let startTime = this.range.start.getTime()
+                while((endTime-startTime) >= 0){
+                    date = new Date(startTime)
+                    week = date.getDay().toString()
+                    allWeek[i] = week
+                    startTime += 86400000
+                    i +=1
+                }
+                holiday = allWeek.filter(function(week){
+                    return week.match(/[0|5|6]/)
+                })
+                return holiday.length
+            }
+        },
+        // chooseDayTotal: function (){
+        //     if(!this.range.end || !this.range.start) return 0
+        //     const endTime = this.range.end.getTime()
+        //     const startTime = this.range.start.getTime()
+        //     return Math.floor((endTime - startTime) / (24*3600*1000)) + 1
+        // },
+    },
+    watch: {
+        'range.start': function(){
+            const vm = this
+            const info = {
+                day: vm.chooseDaytotal,
+                normalDay: vm.distinguishNormalDay,
+                holiday: vm.distinguishholiday,
+            }
+            this.$router.push({ 
+                params: {
+                    info: JSON.stringify(info),
+                },
+            });
+        }
+        // chooseDaytotal: function (val){
+        //     this.$router.push({ params: {totalDays: val} });
+        // },
+        // distinguishNormalDay: function(val){
+        //     this.$router.push({ params: {normalDays: val} });
+        // },
+        // distinguishholiday: function (val){
+        //     this.$router.push({ params: {holidays: val} });
+        // },
+    }
 }
 </script>
 
