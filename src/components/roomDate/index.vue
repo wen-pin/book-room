@@ -4,7 +4,7 @@
             <h1>Standard Double Room</h1>
             <span>1~1人·1床·附早餐·衛浴1間·18平方公尺</span>
             <div class="roomData_text1">
-                <p>平日（一～四）價格：1380 / 假日（五〜日）價格：1500</p>
+                <p>平日（一～四）價格：1200 / 假日（五〜日）價格：1500</p>
                 <p>入住時間：15:00（最早）/ 19:00（最晚）</p>
                 <p>退房時間：10:00</p>
             </div>
@@ -17,74 +17,8 @@
                 </ul>
             </div>
             <div class="roomData_icons">
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon1.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon2.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon3.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon4.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon5.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon6.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon7.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon8.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon9.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon10.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon11.svg" alt="">
-                    <div class="roomData_icons_box_own">
-                        <img src="./icons/icon98.svg" alt="">
-                    </div>
-                </div>
-                <div class="roomData_icons_box">
-                    <img src="./icons/icon12.svg" alt="">
+                <div class="roomData_icons_box" v-for="item in 12" :key="item">
+                    <img :src="require(`../roomDate/icons/icon${item}.svg`)" alt="">
                     <div class="roomData_icons_box_own">
                         <img src="./icons/icon98.svg" alt="">
                     </div>
