@@ -4,7 +4,10 @@
             <span class="bookRoom_bookingRoom_price_money">{{ computeRoomPrice() }}</span>
             <span class="bookRoom_bookingRoom_price_day">{{ totalDay.day }}</span>
         </div>
-        <button class="bookRoom_bookingRoom_btn">
+        <button 
+            class="bookRoom_bookingRoom_btn" 
+            @click.prevent="bookingBtn"
+        >
             Booking Now
         </button>
     </div>
@@ -22,6 +25,7 @@ export default {
             },
             week: new Date().getDay(),
             filternormalWeek: [1, 2, 3, 4],
+            openOrder: false,
         }
     },
     created() {
@@ -61,6 +65,10 @@ export default {
     methods: {
         computeRoomPrice () {
             return (this.totalDay.normalDay * 1200) + (this.totalDay.holiday * 1500)
+        },
+        bookingBtn (){
+            this.openOrder = !this.openOrder
+            this.$router.push({ params: {booking: this.openOrder} })
         },
     }
 }

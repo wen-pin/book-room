@@ -113,12 +113,15 @@ export default {
                 return holiday.length
             }
         },
-        // chooseDayTotal: function (){
-        //     if(!this.range.end || !this.range.start) return 0
-        //     const endTime = this.range.end.getTime()
-        //     const startTime = this.range.start.getTime()
-        //     return Math.floor((endTime - startTime) / (24*3600*1000)) + 1
-        // },
+        // chooseRange: function (){
+        //     if(!this.range.end || !this.range.start){
+        //         return 0
+        //     }else{
+        //         let vm = this
+        //         let chooserange = vm.range
+        //         return chooserange
+        //     }
+        // }
     },
     watch: {
         'range.start': function(){
@@ -133,7 +136,16 @@ export default {
                     info: JSON.stringify(info),
                 },
             });
-        }
+        },
+        // chooseRange: function (){
+        //     this.$router.push({ params: {range: this.chooseRange} });
+        // }
+
+        // 'range': function (){
+        //     const vm = this
+        //     const getRange = vm.range
+        //     this.$router.push({ params: {getRange} })
+        // },
         // chooseDaytotal: function (val){
         //     this.$router.push({ params: {totalDays: val} });
         // },
