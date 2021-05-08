@@ -5,7 +5,9 @@
 		<i class="fas fa-times"></i>
 		</article>
 		<article class="roomDate">
-		<RoomDate />
+		<RoomDate
+			@chooseDateEmit="getChooseDate"
+		/>
 		</article>
 		<div class="orderGrid" :class="{ 'displayNone' : openBox === false }">
 			<div class="orderGrid_orderBox">
@@ -15,16 +17,16 @@
 						<input type="text" id="forName" class="labelInput" v-model="form.name">
 						<label for="forTel" class="labelTitle">手機號碼</label>
 						<input type="text" id="forTel" class="labelInput" v-model="form.tel">
-						<label for="formCheckIn" class="labelTitle">入住日期 {{getRange}} </label>
-						<input type="text" id="formCheckIn" class="labelInput" value="" disabled>
+						<label for="formCheckIn" class="labelTitle">入住日期</label>
+						<input type="text" id="formCheckIn" class="labelInput" :value="chooseDate.startDate" disabled>
 						<label for="formCheckOut" class="labelTitle">退房日期</label>
-						<input type="text" id="formCheckOut" class="labelInput" disabled>
+						<input type="text" id="formCheckOut" class="labelInput" :value="chooseDate.endDate" disabled>
 						<span class="form_dayAndNight">總計：{{ bookDay.day }}天 ,平日：{{ bookDay.normalDay }}天,假日：{{ bookDay.holiday }}天</span>
 						<div class="form_total">
 							<span>總計</span>
 							<span>{{ getRoomPrice() }}元</span>
 						</div>
-						<button class="form_submit">確定送出</button>
+						<button class="form_submit" @click.prevent="controlOrder" >確定送出</button>
 						<p class="form_remakes">此預約系統僅預約功能，並不會對您進行收費</p>
 					</form>
 				</div>
@@ -92,6 +94,28 @@
 					</div>
 				</div>
 			</div>
+			<div class="orderGrid_checkOrder" :class="{ 'displayNone' : orderRoom }" >
+				<div class="checkOrder_cancel" @click.prevent="cancelOrder" >
+					<i class="fas fa-times fa-lg"></i>
+				</div>
+				<div class="checkOrder_content">
+					<div class="checkOrder_content_icon">
+						<div class="hook">
+							<img src="./icons/sucess1.svg" alt="">
+						</div>
+						<div class="order">
+							<img class="order" src="./icons/sucess2.svg" alt="">
+						</div>
+					</div>
+					<div class="checkOrder_content_title">
+						<h3>預約成功</h3>
+					</div>
+					<div class="checkOrder_content_text">
+						<p>請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，</p>
+						<p>若未收到簡訊請來電確認，謝謝您</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -119,6 +143,11 @@ export default {
 				holiday: '',
 			},
 			openBox: false,
+			chooseDate: {
+				startDate: '',
+				endDate: '',
+			},
+			orderRoom: true,
 		}
 	},
 	methods: {
@@ -127,6 +156,16 @@ export default {
         },
 		closeOrder (){
 			this.openBox = !this.openBox
+		},
+		getChooseDate (val){
+			this.chooseDate.startDate = val[0]
+			this.chooseDate.endDate = val[val.length - 1]
+		},
+		controlOrder (){
+			this.orderRoom = !this.orderRoom
+		},
+		cancelOrder (){
+			this.orderRoom = !this.orderRoom
 		},
 	},
 	computed: {
@@ -139,6 +178,12 @@ export default {
             }
             return 0
         },
+		// getDate: function (){
+        //     if (this.$route.params.getChooseDate) {
+        //         return JSON.parse(this.$route.params.getChooseDate)
+        //     }
+        //     return 0
+		// }
 		// getRange: function (){
 		// 	return this.$route.params?.range ?? 0
 		// }
@@ -152,6 +197,9 @@ export default {
 		openOrder: function (){
 			this.openBox = this.openOrder
 		},
+		// getDate: function (){
+		// 	console.log(this.getDate);
+		// }
 		// getDate: function (){
 		// 	console.log(getDate);
 		// }

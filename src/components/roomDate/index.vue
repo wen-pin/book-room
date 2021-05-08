@@ -113,6 +113,26 @@ export default {
                 return holiday.length
             }
         },
+        chooseDate: function(){
+            if(!this.range.end || !this.range.start){
+                return 0
+            }else{
+                let i = 0
+                let allDay= []
+                let endTime = this.range.end.getTime()
+                let startTime = this.range.start.getTime()
+                while((endTime-startTime) >= 0){
+                    let date = new Date(startTime)
+                    let year = date.getFullYear()
+                    let month = date.getMonth() + 1
+                    let day = date.getDate()
+                    allDay[i] = `${year}-${month}-${day}`
+                    startTime +=86400000
+                    i +=1
+                }
+                return allDay
+            }
+        },
         // chooseRange: function (){
         //     if(!this.range.end || !this.range.start){
         //         return 0
@@ -137,6 +157,20 @@ export default {
                 },
             });
         },
+        'chooseDate': function (val){
+            console.log(this.chooseDate);
+            this.$emit('chooseDateEmit', val)
+            // const vm = this
+            // const getChooseDate = {
+            //     startDate: vm.chooseDate[0],
+            //     endDate: vm.chooseDate[vm.chooseDate.length - 1]
+            // }
+            // this.$router.push({
+            //     params: {
+            //         getChooseDate: JSON.stringify(getChooseDate)
+            //     }
+            // })
+        }
         // chooseRange: function (){
         //     this.$router.push({ params: {range: this.chooseRange} });
         // }

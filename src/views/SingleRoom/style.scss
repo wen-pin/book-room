@@ -10,26 +10,27 @@
 }
 
 .singleRoom{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
+    overflow: hidden;
 }
 .singleRoom .bookRoom{
     width: 40%;
-    height: 100%;
+    height: 100vh;
 }
 
 .singleRoom .roomDate{
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 20px 40px;
     color: #38470b;
 }
 
 .orderGrid{
     width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    background-color: hsla(0,0%,100%,.5);
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -71,6 +72,7 @@
         font-size: 1.375rem;
         line-height: 2rem;
         margin-bottom: 1rem;
+        outline: none;
     }
     > .form_dayAndNight{
         color: #949c7c;
@@ -104,6 +106,7 @@
         background-color: #38470b;
         font-size:1.25rem;
         color: #fff;
+        outline: none;
         &:hover{
             cursor: pointer;
             background-color: #949c7c;
@@ -185,6 +188,49 @@
         }
     }
 }
+
+.orderGrid_checkOrder{
+    position: absolute;
+    background-color: #38470b;
+    width: 50%;
+    height: 50%;
+    > .checkOrder_cancel{
+        > .fas{
+            color: #fff;
+            position: absolute;
+            top: 1.5%;
+            right: 1%;
+            font-family:"Font Awesome\ 5 Free";
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    > .checkOrder_content{
+        margin-top: 10%;
+        > .checkOrder_content_icon{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            > .hook{
+                position: absolute;
+                top: 40%;
+                left: 47%;
+            }
+            > .order{
+            }
+        }
+        > .checkOrder_content_title{
+            color: #fff;
+            font-size: 3.125rem;
+            line-height: 4.625rem;
+        }
+        > .checkOrder_content_text{
+            color: #949c7c;
+        }
+    }
+}
+
 .orderBox{
     margin-top: 30px;
     font-weight: 700;
@@ -201,6 +247,11 @@
             }
         }
 }
+
 .displayNone{
     display: none;
+}
+
+.fadeBackground{
+    background-color: hsla(0,0%,100%,.5);
 }
