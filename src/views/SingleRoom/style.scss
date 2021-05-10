@@ -189,11 +189,22 @@
     }
 }
 
-.orderGrid_checkOrder{
+.orderGrid_backgroundColor{
     position: absolute;
-    background-color: #38470b;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0,0%,100%,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+
+.orderGrid_checkOrder{
+    position: relative;
     width: 50%;
-    height: 50%;
+    height: 40%;
+    background-color: #38470b;
     > .checkOrder_cancel{
         > .fas{
             color: #fff;
@@ -207,7 +218,7 @@
         }
     }
     > .checkOrder_content{
-        margin-top: 10%;
+        margin-top: 7%;
         > .checkOrder_content_icon{
             width: 100%;
             height: 100%;

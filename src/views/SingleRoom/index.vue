@@ -94,25 +94,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="orderGrid_checkOrder" :class="{ 'displayNone' : orderRoom }" >
-				<div class="checkOrder_cancel" @click.prevent="cancelOrder" >
-					<i class="fas fa-times fa-lg"></i>
-				</div>
-				<div class="checkOrder_content">
-					<div class="checkOrder_content_icon">
-						<div class="hook">
-							<img src="./icons/sucess1.svg" alt="">
-						</div>
-						<div class="order">
-							<img class="order" src="./icons/sucess2.svg" alt="">
-						</div>
+			<div class="orderGrid_backgroundColor" :class="{ 'displayNone' : orderRoom }">
+				<div class="orderGrid_checkOrder">
+					<div class="checkOrder_cancel" @click.prevent="cancelOrder" >
+						<i class="fas fa-times fa-lg"></i>
 					</div>
-					<div class="checkOrder_content_title">
-						<h3>預約成功</h3>
-					</div>
-					<div class="checkOrder_content_text">
-						<p>請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，</p>
-						<p>若未收到簡訊請來電確認，謝謝您</p>
+					<div class="checkOrder_content">
+						<div class="checkOrder_content_icon">
+							<div class="hook">
+								<img src="./icons/sucess1.svg" alt="">
+							</div>
+							<div class="order">
+								<img class="order" src="./icons/sucess2.svg" alt="">
+							</div>
+						</div>
+						<div class="checkOrder_content_title">
+							<h3>預約成功</h3>
+						</div>
+						<div class="checkOrder_content_text">
+							<p>請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，</p>
+							<p>若未收到簡訊請來電確認，謝謝您</p>
+						</div>
 					</div>
 				</div>
 			</div>
