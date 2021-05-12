@@ -158,7 +158,6 @@ export default {
             });
         },
         'chooseDate': function (val){
-            console.log(this.chooseDate);
             this.$emit('chooseDateEmit', val)
             // const vm = this
             // const getChooseDate = {
@@ -170,7 +169,10 @@ export default {
             //         getChooseDate: JSON.stringify(getChooseDate)
             //     }
             // })
-        }
+        },
+        chooseDaytotal: function(val){
+            this.$emit('chooseDaytotalEmit', val)
+        },
         // chooseRange: function (){
         //     this.$router.push({ params: {range: this.chooseRange} });
         // }

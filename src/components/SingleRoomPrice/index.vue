@@ -8,7 +8,7 @@
             class="bookRoom_bookingRoom_btn" 
             @click.prevent="bookingBtn"
         >
-            Booking Now
+            Booking Now 
         </button>
     </div>
 </template>
@@ -28,6 +28,9 @@ export default {
             openOrder: false,
         }
     },
+    inject: [
+        'provideDayTotals'
+    ],
     created() {
         if(this.filternormalWeek.includes(this.week)){
             this.totalDay.normalDay = 1
@@ -67,8 +70,12 @@ export default {
             return (this.totalDay.normalDay * 1200) + (this.totalDay.holiday * 1500)
         },
         bookingBtn (){
+            if(this.provideDayTotals.dayTotals > 0){
             this.openOrder = !this.openOrder
             this.$router.push({ params: {booking: this.openOrder} })
+            }else{
+                alert("請先選擇日期")
+            }
         },
     }
 }
