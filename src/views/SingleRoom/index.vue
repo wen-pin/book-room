@@ -7,6 +7,7 @@
 		<article class="roomDate">
 		<RoomDate
 			@chooseDateEmit="getChooseDate"
+			@chooseDaytotalEmit="getChooseDaytotal"
 		/>
 		</article>
 		<div class="orderGrid" :class="{ 'displayNone' : openBox === false }">
@@ -150,6 +151,14 @@ export default {
 				endDate: '',
 			},
 			orderRoom: true,
+			dayTotal: {
+				dayTotals: ''
+			},
+		}
+	},
+	provide(){
+		return{
+			provideDayTotals: this.dayTotal
 		}
 	},
 	methods: {
@@ -168,6 +177,9 @@ export default {
 		},
 		cancelOrder (){
 			this.orderRoom = !this.orderRoom
+		},
+		getChooseDaytotal (val){
+			this.dayTotal.dayTotals = val
 		},
 	},
 	computed: {

@@ -6,7 +6,7 @@
         </div>
         <button 
             class="bookRoom_bookingRoom_btn" 
-            @click.prevent="bookingBtn"
+            @click.prevent="bookingBtn" 
         >
             Booking Now 
         </button>
