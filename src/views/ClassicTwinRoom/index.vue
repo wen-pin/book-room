@@ -36,10 +36,10 @@
 						<i class="fas fa-times fa-lg" @click="closeOrder"></i>
 					</div>
 					<div class="orderGrid_orderBox_roomDate_head orderBox">
-						<h2>Standard Double Room</h2>
+						<h2>Classic Twin Room</h2>
 						<div class="orderGrid_orderBox_roomDate_head_content">
 							<span>1~1人·1床·附早餐·衛浴1間·18平方公尺</span>
-							<span>平日（一～四）價格：1200 / 假日（五〜日）價格：1500</span>
+							<span>平日（一～四）價格：2800 / 假日（五〜日）價格：3100</span>
 						</div>
 						<div class="orderGrid_orderBox_roomDate_head_icons" v-for="item in 10" :key="item">
 							<img :src="require(`../SingleRoom/icons/icon${item}.svg`)" alt="">
@@ -125,8 +125,8 @@
 </template>
 
 <script>
-import BackgroundImage from '../../components/SingleRoom/backgroundImage/index.vue'
-import RoomDate from '../../components/SingleRoom/roomDate/index.vue'
+import BackgroundImage from '../../components/ClassicTwinRoom/backgroundImage/index.vue'
+import RoomDate from '../../components/ClassicTwinRoom/roomDate/index.vue'
 
 export default {
 	name: 'SingleRoom',
@@ -163,7 +163,7 @@ export default {
 	},
 	methods: {
 		getRoomPrice () {
-            return (this.bookDay.normalDay * 1200) + (this.bookDay.holiday * 1500)
+            return (this.bookDay.normalDay * 2800) + (this.bookDay.holiday * 3100)
         },
 		closeOrder (){
 			this.openBox = !this.openBox

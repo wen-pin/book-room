@@ -1,0 +1,268 @@
+@import url("https://use.fontawesome.com/releases/v5.0.4/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.singleRoom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.singleRoom .bookRoom{
+    width: 40%;
+    height: 100vh;
+}
+
+.singleRoom .roomDate{
+    width: 60%;
+    height: 100vh;
+    padding: 20px 40px;
+    color: #38470b;
+}
+
+.orderGrid{
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0,0%,100%,.5);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.orderGrid_orderBox{
+    width: 80%;
+    height: 65%;
+    border: 1px solid #38470b;
+    display: flex;
+}
+
+.orderGrid_orderBox_form{
+    width: 45%;
+    height: 100%;
+    padding: 5%;
+    background-color: #38470b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orderGrid_orderBox_form_context{
+    width: 100%;
+    > label, span, div, button, p, input{
+        width: 100%;
+    }
+    > .labelTitle{
+        font-size: .875rem;
+        line-height: 1.25rem;
+        color: #fff;
+        display: flex;
+    }
+    > .labelInput{
+        font-size: 1.375rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        outline: none;
+    }
+    > .form_dayAndNight{
+        color: #949c7c;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        border-bottom: 1px solid #949c7c;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+    }
+    > .form_total{
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: end;
+        > span:first-child{
+            font-size: 0.875rem;
+        }
+        > span:last-child{
+            font-size: 2.25rem;
+            line-height: 4.5rem;
+            margin-bottom: 1rem;
+            &:before{
+                content: '$';
+                color: #fff;
+            }
+        }
+    }
+    > button{
+        border: 1px solid #949c7c;
+        background-color: #38470b;
+        font-size:1.25rem;
+        color: #fff;
+        outline: none;
+        &:hover{
+            cursor: pointer;
+            background-color: #949c7c;
+        }
+    }
+    > p{
+        color: #fff;
+        font-size:.75rem;
+        margin-top: 3rem;
+    }
+}
+
+.orderGrid_orderBox_roomDate{
+    width: 55%;
+    height: 100%;
+    padding: 5px 20px;
+    position: relative;
+    background-color: #fff;
+    > .orderGrid_orderBox_roomDate_cancel{
+        > .fas{
+            position: absolute;
+            top: 1.5%;
+            right: 1%;
+            font-family:"Font Awesome\ 5 Free";
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    > .orderGrid_orderBox_roomDate_head{
+        > .orderGrid_orderBox_roomDate_head_content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        > .orderGrid_orderBox_roomDate_head_icons{
+            display: inline-block;
+            width: 10%;
+            text-align: start;
+            > .img{
+                width: 100%;
+            }
+        }
+    }
+    > .orderGrid_orderBox_roomDate_context{
+        width: 100%;
+        > ul{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    > .orderGrid_orderBox_roomDate_process{
+        > .orderGrid_orderBox_roomDate_process_box{
+            display: flex;
+            > .orderGrid_orderBox_roomDate_process_box_box{
+                width: 30%;
+                border: 1px solid #949c7c;
+                > .process_box_icon{
+                    background-color: #949c7c;
+                    > img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                > .process_box_content{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    font-size: 15px;
+                    color: #38470b;
+                }
+            }
+            > .process_arrow{
+                margin: 0 10px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.orderGrid_backgroundColor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0,0%,100%,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+
+.orderGrid_checkOrder{
+    position: relative;
+    width: 50%;
+    height: 40%;
+    background-color: #38470b;
+    > .checkOrder_cancel{
+        > .fas{
+            color: #fff;
+            position: absolute;
+            top: 1.5%;
+            right: 1%;
+            font-family:"Font Awesome\ 5 Free";
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    > .checkOrder_content{
+        margin-top: 7%;
+        > .checkOrder_content_icon{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            > .hook{
+                position: absolute;
+                top: 40%;
+                left: 47%;
+            }
+            > .order{
+            }
+        }
+        > .checkOrder_content_title{
+            color: #fff;
+            font-size: 3.125rem;
+            line-height: 4.625rem;
+        }
+        > .checkOrder_content_text{
+            color: #949c7c;
+        }
+    }
+}
+
+.orderBox{
+    margin-top: 30px;
+    font-weight: 700;
+        > h2{
+            margin-bottom: 10px;
+            text-align: start;
+            &:after{
+                content: '';
+                display: inline-block;
+                width: 60%;
+                height: 2px;
+                background-color: #ddd;
+                margin: 10px 0;
+            }
+        }
+}
+
+.displayNone{
+    display: none;
+}
+
+.fadeBackground{
+    background-color: hsla(0,0%,100%,.5);
+}

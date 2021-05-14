@@ -21,29 +21,29 @@
                         <img :src="require('../Home/images/room1.png')" alt="">
                         <router-link to="/SingleRoom">
                             <div class="txt">
-                                <h2>Standard Double Room</h2>
+                                <h2>Standard Single Room</h2>
                             </div>
                         </router-link>
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room2.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link to="/ClassicSingleRoom">
                             <div class="txt">
-                                <h2>Classic Double Room</h2>
+                                <h2>Classic Single Room</h2>
                             </div>
                         </router-link>
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room3.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link to="/DeluxeSingleRoom">
                             <div class="txt">
-                                <h2>Deluxe Double Room</h2>
+                                <h2>Deluxe Single Room</h2>
                             </div>
                         </router-link>
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room4.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link to="/StandardTwinRoom">
                             <div class="txt">
                                 <h2>Standard Twin Room</h2>
                             </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room5.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link to="/ClassicTwinRoom">
                             <div class="txt">
                                 <h2>Classic Twin Room</h2>
                             </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room6.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link to="/DeluxeTwinRoom">
                             <div class="txt">
                                 <h2>Deluxe Twin Room</h2>
                             </div>
