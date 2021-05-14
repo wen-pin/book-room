@@ -36,9 +36,9 @@ export default {
         return {
             buttonActiveNumber: 0,
             backgroundList:[
-                {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room1.png')})`},
-                {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/seeroom2.png')})`},
-                {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/seeroom3.png')})`},
+                {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room1.jpg')})`},
+                {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room2.jpg')})`},
+                {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room3.jpg')})`},
             ],
         }
     },
