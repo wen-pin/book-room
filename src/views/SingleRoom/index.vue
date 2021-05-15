@@ -10,7 +10,7 @@
 			@chooseDaytotalEmit="getChooseDaytotal"
 		/>
 		</article>
-		<div class="orderGrid" :class="{ 'displayNone' : openBox === false }">
+		<div class="orderGrid" :class="{ 'displayNone' : openBox === true }">
 			<div class="orderGrid_orderBox">
 				<div class="orderGrid_orderBox_form">
 					<form action="" class="orderGrid_orderBox_form_context">
@@ -36,10 +36,10 @@
 						<i class="fas fa-times fa-lg" @click="closeOrder"></i>
 					</div>
 					<div class="orderGrid_orderBox_roomDate_head orderBox">
-						<h2>Standard Double Room</h2>
+						<h2> {{ chooseRoom.roomTitle }} </h2>
 						<div class="orderGrid_orderBox_roomDate_head_content">
 							<span>1~1人·1床·附早餐·衛浴1間·18平方公尺</span>
-							<span>平日（一～四）價格：1200 / 假日（五〜日）價格：1500</span>
+							<span>平日（一～四）價格：{{ chooseRoom.normalDayPrice }} / 假日（五〜日）價格：{{ chooseRoom.holidayPrice }}</span>
 						</div>
 						<div class="orderGrid_orderBox_roomDate_head_icons" v-for="item in 10" :key="item">
 							<img :src="require(`../SingleRoom/icons/icon${item}.svg`)" alt="">
@@ -125,8 +125,8 @@
 </template>
 
 <script>
-import BackgroundImage from '../../components/SingleRoom/backgroundImage/index.vue'
-import RoomDate from '../../components/SingleRoom/roomDate/index.vue'
+import BackgroundImage from '../../components/backgroundImage/index.vue'
+import RoomDate from '../../components/roomDate/index.vue'
 
 export default {
 	name: 'SingleRoom',
@@ -154,6 +154,14 @@ export default {
 			dayTotal: {
 				dayTotals: ''
 			},
+			totalRooms: [
+                { name: 'standardSingle',roomTitle: 'Standard Single Room', normalDayPrice: 1200, holidayPrice: 1500 },
+				{ name: 'classicSingle',roomTitle: 'Classic Single Room', normalDayPrice: 1600, holidayPrice: 1900 },
+                { name: 'deluxeSingle',roomTitle: 'Deluxe Single Room', normalDayPrice: 2000, holidayPrice: 2300 },
+                { name: 'standardTwin',roomTitle: 'Standard Twin Room', normalDayPrice: 2400, holidayPrice: 2700 },
+                { name: 'classicTwin',roomTitle: 'Classic Twin Room', normalDayPrice: 2800, holidayPrice: 3100 },
+                { name: 'deluxeTwin',roomTitle: 'Deluxe Twin Room', normalDayPrice: 3200, holidayPrice: 3500 },
+            ],
 		}
 	},
 	provide(){
@@ -163,7 +171,7 @@ export default {
 	},
 	methods: {
 		getRoomPrice () {
-            return (this.bookDay.normalDay * 1200) + (this.bookDay.holiday * 1500)
+            return (this.bookDay.normalDay * this.chooseRoom.normalDayPrice) + (this.bookDay.holiday * this.chooseRoom.holidayPrice)
         },
 		closeOrder (){
 			this.openBox = !this.openBox
@@ -192,6 +200,9 @@ export default {
             }
             return 0
         },
+		chooseRoom: function(){
+            return this.totalRooms.find( (item) => item.name === this.$route.query.name)
+        }
 	},
 	watch: {
 		getDay: function(){

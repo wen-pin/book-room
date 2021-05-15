@@ -19,7 +19,7 @@
                 <div class="homepageConfiguration_main_context_thumbnail">
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room1.png')" alt="">
-                        <router-link to="/SingleRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'standardSingle' } }">
                             <div class="txt">
                                 <h2>Standard Single Room</h2>
                             </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room2.png')" alt="">
-                        <router-link to="/ClassicSingleRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'classicSingle' } }">
                             <div class="txt">
                                 <h2>Classic Single Room</h2>
                             </div>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room3.png')" alt="">
-                        <router-link to="/DeluxeSingleRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'deluxeSingle' } }">
                             <div class="txt">
                                 <h2>Deluxe Single Room</h2>
                             </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room4.png')" alt="">
-                        <router-link to="/StandardTwinRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'standardTwin' } }">
                             <div class="txt">
                                 <h2>Standard Twin Room</h2>
                             </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room5.png')" alt="">
-                        <router-link to="/ClassicTwinRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'classicTwin' } }">
                             <div class="txt">
                                 <h2>Classic Twin Room</h2>
                             </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="thumbnail col-4">
                         <img :src="require('../Home/images/room6.png')" alt="">
-                        <router-link to="/DeluxeTwinRoom">
+                        <router-link :to="{ name: 'room', query: { name: 'deluxeTwin' } }">
                             <div class="txt">
                                 <h2>Deluxe Twin Room</h2>
                             </div>
