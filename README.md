@@ -31,10 +31,8 @@
 
 # 使用技術
 
-  1. HTML5: 網頁基礎架構
-  2. JavaScript: 互動式網頁
-  3. Vue Router: 頁面路由控制
-  4. Vue Cli 3: 建立 SPA
+  1. Vue Router: 頁面路由控制
+  2. Vue Cli 3: 建立 SPA
 
 # 使用套件
 
