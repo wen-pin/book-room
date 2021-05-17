@@ -136,11 +136,13 @@
         }
     }
     > .orderGrid_orderBox_roomDate_head{
+        margin-top: 10%;
         > .orderGrid_orderBox_roomDate_head_content{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 4%;
+            font-size: 0.8rem;
+            margin: 5% 0 3% 0;
         }
         > .orderGrid_orderBox_roomDate_head_icons{
             display: inline-block;
@@ -154,10 +156,12 @@
     > .orderGrid_orderBox_roomDate_context{
         width: 100%;
         > ul{
-            margin: 4% 0;
+            margin: 0 0 4% 4%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            font-size: 0.8rem;
+            margin-top: 5%;
         }
     }
     > .orderGrid_orderBox_roomDate_process{
@@ -180,6 +184,7 @@
                     justify-content: center;
                     font-size: 15px;
                     color: #38470b;
+                    font-size: 0.8rem;
                 }
             }
             > .process_arrow{
@@ -230,8 +235,6 @@
                 top: 40%;
                 left: 47%;
             }
-            > .order{
-            }
         }
         > .checkOrder_content_title{
             color: #fff;
@@ -245,20 +248,22 @@
 }
 
 .orderBox{
-    margin-top: 30px;
+    margin-bottom: 7%;
     font-weight: 700;
-        > h2{
-            margin-bottom: 10px;
-            text-align: start;
-            &:after{
-                content: '';
-                display: inline-block;
-                width: 60%;
-                height: 2px;
-                background-color: #ddd;
-                margin: 10px 0;
-            }
-        }
+    position: relative;
+    &:before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #ddd;
+    }
+    > h2{
+        position: absolute;
+        top: -12%;
+        left: 0;
+        background-color: #fff;
+    }
 }
 
 .displayNone{

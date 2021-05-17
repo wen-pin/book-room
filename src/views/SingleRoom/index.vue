@@ -10,7 +10,7 @@
 			@chooseDaytotalEmit="getChooseDaytotal"
 		/>
 		</article>
-		<div class="orderGrid" :class="{ 'displayNone' : openBox === true }">
+		<div class="orderGrid" :class="{ 'displayNone' : openBox === false }">
 			<div class="orderGrid_orderBox">
 				<div class="orderGrid_orderBox_form">
 					<form action="" class="orderGrid_orderBox_form_context">
