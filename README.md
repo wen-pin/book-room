@@ -34,7 +34,6 @@
 
   1. [v-calendar](https://github.com/nathanreyes/v-calendar)
 
-  
 ## Project setup
 ```
 yarn install
