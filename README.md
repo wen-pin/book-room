@@ -3,10 +3,9 @@
 
 # 訂房網
 點選需要的房型，便可以進入該房型網頁開始訂房
-<p></p>
-主要以 Vue 來開發
 
 # Demo
+
 
 
 # 訂房網功能
@@ -29,6 +28,13 @@
 * 訂房完成
 
   <img src="https://github.com/wen-pin/wen-pin.github.io/blob/main/README%E5%9C%96%E7%89%87/%E6%88%AA%E5%9C%96%202021-05-17%2016.50.38.png">
+
+# 使用技術
+
+  1. HTML5: 網頁基礎架構
+  2. JavaScript: 互動式網頁
+  3. Vue Router: 頁面路由控制
+  4. Vue Cli 3: 建立 SPA
 
 # 使用套件
 
