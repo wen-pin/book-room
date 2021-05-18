@@ -4,15 +4,18 @@
     background: no-repeat;
     background-size: cover;
     background-position: center center;
+    position: relative;
 }
 
 .backPage{
-    padding: 10% 50% 10% 0%;
+    position: absolute;
+    top: 3%;
+    left: 7%;
 }
 
 .bookRoom_bookingRoom{
     position: relative;
-    top: 50%;
+    top: 70%;
 }
 
 .backgroundImage_other {
@@ -20,7 +23,7 @@
     flex-direction: row;
     justify-content: center;
     position: relative;
-    top: 60%;
+    top: 75%;
 }
 
 .backgroundImage_other_button {

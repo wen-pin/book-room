@@ -15,9 +15,9 @@
 				<div class="orderGrid_orderBox_form">
 					<form action="" class="orderGrid_orderBox_form_context">
 						<label for="forName" class="labelTitle">姓名</label>
-						<input type="text" id="forName" class="labelInput" v-model="form.name">
+						<input type="text" id="forName" class="labelInput" value="">
 						<label for="forTel" class="labelTitle">手機號碼</label>
-						<input type="text" id="forTel" class="labelInput" v-model="form.tel">
+						<input type="text" id="forTel" class="labelInput" value="">
 						<label for="formCheckIn" class="labelTitle">入住日期</label>
 						<input type="text" id="formCheckIn" class="labelInput" :value="chooseDate.startDate" disabled>
 						<label for="formCheckOut" class="labelTitle">退房日期</label>
@@ -136,10 +136,6 @@ export default {
 	},
 	data (){
 		return{
-			form: {
-				name: '',
-				tel: '',
-			},
 			bookDay: {
 				day: '',
 				normalDay: '',
@@ -181,14 +177,22 @@ export default {
 			this.chooseDate.endDate = val[val.length - 1]
 		},
 		controlOrder (){
-			this.orderRoom = !this.orderRoom
+			if(document.getElementById("forName").value==""){
+				alert("請輸入姓名")
+			}else if(document.getElementById("forTel").value==""){
+				alert("請輸入手機號碼")
+			}else if(isNaN(document.getElementById("forTel").value)){
+				alert("手機號碼請輸入數字")
+			}else{
+				this.orderRoom = !this.orderRoom
+			}
 		},
 		cancelOrder (){
 			this.orderRoom = !this.orderRoom
 		},
 		getChooseDaytotal (val){
 			this.dayTotal.dayTotals = val
-		},
+		}
 	},
 	computed: {
 		openOrder: function(){
