@@ -60,3 +60,5 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+  
+設計稿參考自 [The F2E 2nd 的 Penny 設計師](https://challenge.thef2e.com/user/2232?schedule=3968#works-3968)
