@@ -15,9 +15,9 @@
 				<div class="orderGrid_orderBox_form">
 					<form action="" class="orderGrid_orderBox_form_context">
 						<label for="forName" class="labelTitle">姓名</label>
-						<input type="text" id="forName" class="labelInput" value="">
+						<input type="text" id="forName" class="labelInput" placeholder="請輸入姓名" value="">
 						<label for="forTel" class="labelTitle">手機號碼</label>
-						<input type="text" id="forTel" class="labelInput" value="">
+						<input type="text" id="forTel" class="labelInput" placeholder="請輸入手機號碼" value="">
 						<label for="formCheckIn" class="labelTitle">入住日期</label>
 						<input type="text" id="formCheckIn" class="labelInput" :value="chooseDate.startDate" disabled>
 						<label for="formCheckOut" class="labelTitle">退房日期</label>
@@ -177,13 +177,17 @@ export default {
 			this.chooseDate.endDate = val[val.length - 1]
 		},
 		controlOrder (){
+			var str_name = "^([\u4e00-\u9fa5]+|[a-zA-Z]+)$" 
 			if(document.getElementById("forName").value==""){
 				alert("請輸入姓名")
 			}else if(document.getElementById("forTel").value==""){
 				alert("請輸入手機號碼")
+			}else if(!new RegExp(str_name).test(document.getElementById("forName").value)){
+				alert("用戶名只能是中文或英文姓名")
 			}else if(isNaN(document.getElementById("forTel").value)){
 				alert("手機號碼請輸入數字")
-			}else{
+			}
+			else{
 				this.orderRoom = !this.orderRoom
 			}
 		},
