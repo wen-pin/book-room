@@ -46,14 +46,14 @@ export default {
 				{ 
                     name: 'classicSingle',
                     backgroundList:[
-                    {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room4.jpg')})`},
+                    {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room4.jpeg')})`},
                     {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room5.jpg')})`},
                     {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room6.jpg')})`},
                 ]},
 				{ 
                     name: 'deluxeSingle',
                     backgroundList:[
-                    {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room7.jpg')})`},
+                    {buttonActive: true , imageUrl: `url(${require('../backgroundImage/images/room7.jpeg')})`},
                     {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room8.jpg')})`},
                     {buttonActive: false, imageUrl: `url(${require('../backgroundImage/images/room9.jpg')})`},
                 ]},

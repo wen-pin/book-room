@@ -177,15 +177,16 @@ export default {
 			this.chooseDate.endDate = val[val.length - 1]
 		},
 		controlOrder (){
-			var str_name = "^([\u4e00-\u9fa5]+|[a-zA-Z]+)$" 
+			var str_name = "^([\u4e00-\u9fa5]+|[a-zA-Z]+)$"
+			var str_mobile = "^0[0-9]{9}$"
 			if(document.getElementById("forName").value==""){
 				alert("請輸入姓名")
 			}else if(document.getElementById("forTel").value==""){
 				alert("請輸入手機號碼")
 			}else if(!new RegExp(str_name).test(document.getElementById("forName").value)){
 				alert("用戶名只能是中文或英文姓名")
-			}else if(isNaN(document.getElementById("forTel").value)){
-				alert("手機號碼請輸入數字")
+			}else if(!new RegExp(str_mobile).test(document.getElementById("forTel").value)){
+				alert("手機號碼有誤，請重填")
 			}
 			else{
 				this.orderRoom = !this.orderRoom
