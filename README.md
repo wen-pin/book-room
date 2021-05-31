@@ -30,9 +30,9 @@
   <img src="https://github.com/wen-pin/wen-pin.github.io/blob/main/README%E5%9C%96%E7%89%87/%E6%88%AA%E5%9C%96%202021-05-17%2016.50.38.png">
 
 # 使用技術
-
-  1. Vue Router: 頁面路由控制
-  2. Vue Cli 3: 建立 SPA
+  1. 使用 Vue CLI 建置專案
+  1. 使用 vue-router建構Single Page Application
+  2. 使用 Git版本控制
 
 # 使用套件
 
