@@ -6,7 +6,7 @@
 
 # Demo
 
-  <a href="https://wen-pin.github.io/#/">Demo<a/>
+  <a href="https://wen-pin.github.io/book-room/#/">Demo<a/>
 
 # 訂房網功能
 * 點選房型
